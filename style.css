@@ -1,0 +1,495 @@
+/***** Variables *****/
+
+:root {
+  /* Colors */
+  --color-green: #66e2dc;
+  --color-orange: #fa7453;
+  --color-yellow: #ffb964;
+  --color-white: #fcfaf9;
+  --color-black: #191826;
+
+  /* Font-size */
+  --fs-100: 16px;
+  --fs-200: 18px;
+  --fs-300: 20px;
+  --fs-400: 40px;
+  --fs-500: 64px;
+  --fs-600: 88px;
+
+  /* Font-Weight */
+  --fw-400: 400;
+  --fw-700: 700;
+
+  /* Font-family */
+  --ff-primary: "IBM Plex Sans", sans-serif;
+}
+
+/***** Reset *****/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-100);
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/***** Styling *****/
+
+/* Section hero */
+
+body {
+  background-color: var(--color-white);
+  background-image: url(./assets/bg-main-mobile.png);
+  background-position: center;
+  background-size: contain;
+}
+
+.hero {
+  padding: 40px 0px 64px 0px;
+  margin-bottom: 94px;
+}
+
+.header {
+  margin: 0 24px;
+  padding-bottom: 64px;
+}
+
+.hero__title {
+  margin: 0 24px;
+  width: 327px;
+}
+
+.hero__heading {
+  font-size: var(--fs-400);
+  line-height: 48px;
+  margin-bottom: 20px;
+  color: var(--color-black);
+}
+
+.hero__subheading {
+  line-height: 26px;
+  color: var(--color-black);
+}
+
+.hero__image {
+  display: none;
+}
+
+/* Section about */
+
+.about {
+  position: relative;
+}
+
+.about__box--first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-black);
+  border-radius: 12px;
+}
+
+.about__image--mobile {
+  position: absolute;
+  top: -98px;
+  width: 208.97px;
+  height: 430px;
+}
+
+.about__box--second {
+  display: flex;
+  flex-direction: column;
+  padding: 48px 36px;
+  background-color: var(--color-orange);
+  color: var(--color-white);
+  border-radius: 12px;
+}
+
+.about__heading {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.about__subheading {
+  font-size: var(--fs-200);
+  width: 302px;
+  margin-bottom: 18px;
+}
+
+.about__price {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0px 6px;
+  margin-bottom: 18px;
+}
+
+.about__money {
+  font-size: 65px;
+  font-weight: var(--fw-700);
+}
+
+.about__date {
+  font-size: 20px;
+}
+
+.about__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn {
+  border-radius: 12px;
+  border-style: none;
+  height: 61px;
+  width: 296px;
+  cursor: pointer;
+}
+
+.about__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.about__btn--apple {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.about__btn--apple:hover {
+  background-color: var(--color-green);
+}
+
+.about__btn--android {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+.about__btn--android:hover {
+  background-color: var(--color-yellow);
+}
+
+.about__btn--paragraph {
+  font-weight: var(--fw-700);
+}
+
+/* Section footer */
+
+.footer {
+  margin: 0 24px;
+  padding: 64px 0px 80px 0px;
+}
+
+.footer__logo {
+  margin-bottom: 32px;
+}
+
+.footer__text {
+  margin-bottom: 64px;
+  width: 327px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: var(--color-black);
+}
+
+.footer__link:hover {
+  color: var(--color-orange);
+}
+
+.footer__contact {
+  display: flex;
+  gap: 20px;
+}
+
+.footer__icon {
+  width: 30px;
+  height: 30px;
+  color: var(--color-black);
+}
+
+.footer__icon:hover {
+  color: var(--color-orange);
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: var(--color-white);
+    background-image: url(./assets/bg-main-tablet.png);
+    background-position: center;
+    background-size: contain;
+  }
+
+  /* Section hero */
+
+  .hero {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 112px;
+  }
+
+  .header {
+    margin: 0 39px;
+  }
+
+  .hero__title {
+    margin: 0 39px;
+  }
+
+  .hero__heading {
+    width: 520px;
+    height: 192px;
+    line-height: 64px;
+    margin-bottom: 28px;
+    font-size: var(--fs-500);
+  }
+
+  .hero__subheading {
+    width: 514px;
+    height: 112px;
+    line-height: 28px;
+    font-size: var(--fs-200);
+  }
+
+  .hero__image {
+    display: block;
+    position: absolute;
+    top: -32px;
+    right: -35px;
+    width: 266px;
+    height: 400px;
+  }
+
+  /* Section about */
+
+  .about {
+    position: relative;
+    margin: 96px 32px;
+  }
+
+  .about__background {
+    width: 280px;
+    height: 420px;
+    position: absolute;
+    top: -45px;
+    /* left: 33, 33%;
+    right: 33, 33%; */
+  }
+
+  .about__image--mobile {
+    left: 64px;
+    width: 270px;
+    height: 556px;
+  }
+
+  .about__box--first {
+    height: 600px;
+  }
+
+  .about__box--second {
+    /* top: 150px; */
+    bottom: -96px;
+    width: 399px;
+    right: 64px;
+    position: absolute;
+    justify-content: space-between;
+  }
+
+  .about__heading {
+    font-size: 40px;
+  }
+
+  /* Section footer */
+
+  .footer {
+    padding: 87px 0px 85px 0px;
+    margin: 0 33px;
+  }
+
+  .footer__description {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer__text {
+    width: 365px;
+    margin: 0px;
+  }
+
+  .footer__break {
+    display: none;
+  }
+
+  @media screen and (min-width: 1440px) {
+    /* Section hero */
+    body {
+      background-image: url(./assets/bg-main-desktop.png);
+      background-position: center bottom;
+      /* background-size: cover; */
+    }
+
+    .hero {
+      background-image: none;
+      margin-bottom: 108px;
+      padding: 61px 0px 105px 0px;
+    }
+
+    .header {
+      margin: 0 165px;
+    }
+
+    .hero__title {
+      padding-bottom: 108px;
+      margin: 0 165px;
+    }
+
+    .hero__heading {
+      font-size: var(--fs-600);
+      line-height: 88px;
+      width: 1015px;
+      margin-bottom: 40px;
+    }
+
+    .hero__subheading {
+      width: 825px;
+      font-size: var(--fs-300);
+      line-height: 34px;
+    }
+
+    .hero__image {
+      width: 312px;
+      height: 468px;
+      right: 0;
+    }
+    /* Section about */
+    .about {
+      margin: 96px 165px;
+    }
+
+    .about__background {
+      width: 312px;
+      height: 468px;
+      /* left: 33.33%;
+      right: 33.33%; */
+    }
+
+    .about__image--mobile {
+      width: 312px;
+      height: 642px;
+      left: 102px;
+      top: -213px;
+    }
+
+    .about__box--second {
+      width: 446px;
+      height: 625px;
+      padding: 58px 59px 48px 54px;
+    }
+
+    /* Section footer */
+    .footer {
+      margin: 0px 151px 0px 179px;
+      padding: 91px 0px 87px 0px;
+    }
+
+    .footer__box {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .footer__content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer__description {
+      flex-grow: 1;
+      margin-left: 150px;
+    }
+  }
+}
